@@ -11,10 +11,10 @@ selenium-debug.log
 # Editor directories and files
 .idea
 .vscode
-bin/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 .classpath
 .project
+bin/
