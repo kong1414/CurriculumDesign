@@ -1,4 +1,4 @@
-package AbuseOfTheMouse;
+package Stopwatch;
 
 import java.awt.EventQueue;
 
@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import java.awt.Font;
 
-public class AbuseMouse {
+public class Stopwatch {
 
 	private JFrame frame;
 	private boolean runningState;
@@ -33,7 +33,7 @@ public class AbuseMouse {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AbuseMouse window = new AbuseMouse();
+					Stopwatch window = new Stopwatch();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class AbuseMouse {
 	/**
 	 * Create the application.
 	 */
-	public AbuseMouse() {
+	public Stopwatch() {
 		this.runningState = false;
 		initialize();
 	}
@@ -84,7 +84,7 @@ public class AbuseMouse {
 		timeLabel.setBounds(30, 20, 54, 15);
 		frame.getContentPane().add(timeLabel);
 
-		timingLabel = new JLabel("00:00:00:0",JLabel.CENTER);
+		timingLabel = new JLabel("00:00:00:0", JLabel.CENTER);
 		timingLabel.setFont(new Font("宋体", Font.PLAIN, 50));
 		timingLabel.setBounds(64, 63, 289, 76);
 		frame.getContentPane().add(timingLabel);
@@ -99,10 +99,11 @@ public class AbuseMouse {
 		frame.getContentPane().add(list);
 
 		Calendar cal = Calendar.getInstance();
-		// cal.setTimeInMillis(millis)
 
 		// 当前时间的定时器类
 		ActionListener currentTimeListener = new ActionListener() {
+
+			@Override
 			public void actionPerformed(ActionEvent evt) {
 				currentTimeLabel.setText(dateformat.format(new Date()));
 			}
@@ -132,8 +133,7 @@ public class AbuseMouse {
 					HH++;
 					MM = 0;
 				}
-				timingLabel.setText(String.format("%02d:%02d:%02d:%1d",HH,MM,SS,MS));
-				
+				timingLabel.setText(String.format("%02d:%02d:%02d:%1d", HH, MM, SS, MS));
 			}
 		};
 
