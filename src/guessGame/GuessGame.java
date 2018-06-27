@@ -9,7 +9,7 @@ import java.util.Random;
 /**
  * @Description:
  * @Author: QiuGuanLin
- * @Date: 2018/6/27 10:10
+ * @Date: 2018/6/28 10:10
  */
 public class GuessGame extends JPanel {
     private static final long serialVersionUID = 1L;

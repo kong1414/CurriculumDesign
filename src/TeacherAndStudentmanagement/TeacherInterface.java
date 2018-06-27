@@ -1,4 +1,4 @@
-package teacherAndStudentmanagement;
+package teacherAndStudentManagement;
 
 public interface TeacherInterface {
 	public void setPay(double pay);
