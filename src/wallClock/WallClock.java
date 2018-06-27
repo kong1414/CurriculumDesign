@@ -11,9 +11,9 @@ public class WallClock extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Timer timer;
 	private JLabel label;
-	int h1 = 0, h2 = 0, h3 = 0, h4 = 0;
-	int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
-	int s1 = 0, s2 = 0, s3 = 0, s4 = 0;
+	private int h1 = 0, h2 = 0, h3 = 0, h4 = 0;
+	private int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
+	private int s1 = 0, s2 = 0, s3 = 0, s4 = 0;
 
 	public WallClock() {
 		setBackground(Color.white);
@@ -55,7 +55,7 @@ public class WallClock extends JPanel {
 		}
 		// 计算总时间
 		int sum = h * 3600 + m * 60 + s;
-		double theta = 0, PI = 3.14159;
+		double theta, PI = 3.14159;
 		double X[] = { 200.0, 200.0 }, Y[] = { 200.0, 160 };
 		// 每次偏转值
 		theta = sum * 1.0 / 120;
