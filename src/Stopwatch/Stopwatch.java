@@ -33,6 +33,7 @@ public class Stopwatch {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Stopwatch window = new Stopwatch();
