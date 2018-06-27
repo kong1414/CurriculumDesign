@@ -11,7 +11,7 @@ public class People {
     People() {
     }
 
-    public People(double height, double weight) {
+    People(double height, double weight) {
         this.height = height;
         this.weight = weight;
     }

@@ -6,10 +6,10 @@ package Extends;
  * @Date: 2018/6/25 11:26
  */
 public class ChinaPeople extends People {
-    public ChinaPeople() {
+    ChinaPeople() {
     }
 
-    public ChinaPeople(double height, double weight) {
+    ChinaPeople(double height, double weight) {
         super(height, weight);
     }
 
