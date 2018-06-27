@@ -1,4 +1,4 @@
-package TeacherAndStudentmanagement;
+package teacherAndStudentmanagement;
 
 public class StudentAndTeacherDemo {
 	public static void main(String[] args) {

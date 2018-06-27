@@ -1,4 +1,4 @@
-package TeacherAndStudentmanagement;
+package teacherAndStudentmanagement;
 
 public class Graduate implements StudentInterface, TeacherInterface {
 	private String name;

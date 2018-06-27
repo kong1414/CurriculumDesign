@@ -3,13 +3,8 @@ package Stopwatch;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JTextPane;
 import javax.swing.Timer;
-
-import com.sun.xml.internal.ws.api.client.ThrowableInPacketCompletionFeature;
-
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -25,6 +20,13 @@ public class Stopwatch {
 	private JFrame frame;
 	private boolean runningState;
 	// 0表示暂停中，1表示运行中
+	private String[] timelist;
+	private int count = 0;
+	// MM为分钟 SS为秒 MS为100毫秒HH为小时
+	int MM = 0;
+	int SS = 0;
+	int MS = 0;
+	int HH = 0;
 
 	/**
 	 * Launch the application.
@@ -60,42 +62,40 @@ public class Stopwatch {
 		frame.getContentPane().setLayout(null);
 
 		DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd E a HH:mm:ss");
+		timelist = new String[10];
 
 		JButton startButton;
 		JButton countAndResetButton;
 		JButton pauseAndContiueButton;
-		JLabel timeLabel;
 		JLabel timingLabel;
 		JLabel currentTimeLabel;
 
 		startButton = new JButton("开始");
-		startButton.setBounds(164, 180, 93, 23);
+		startButton.setBounds(170, 142, 100, 30);
 		frame.getContentPane().add(startButton);
 
-		countAndResetButton = new JButton("计数重置");
-		countAndResetButton.setBounds(100, 206, 93, 23);
+		countAndResetButton = new JButton("计数");
+		countAndResetButton.setBounds(97, 142, 100, 30);
+		countAndResetButton.setVisible(false);
 		frame.getContentPane().add(countAndResetButton);
 
-		pauseAndContiueButton = new JButton("暂停继续");
-		pauseAndContiueButton.setBounds(230, 206, 93, 23);
+		pauseAndContiueButton = new JButton("暂停");
+		pauseAndContiueButton.setBounds(236, 142, 100, 30);
+		pauseAndContiueButton.setVisible(false);
 		frame.getContentPane().add(pauseAndContiueButton);
-
-		timeLabel = new JLabel("当前时间");
-		timeLabel.setBounds(30, 20, 54, 15);
-		frame.getContentPane().add(timeLabel);
 
 		timingLabel = new JLabel("00:00:00:0", JLabel.CENTER);
 		timingLabel.setFont(new Font("宋体", Font.PLAIN, 50));
-		timingLabel.setBounds(64, 63, 289, 76);
+		timingLabel.setBounds(72, 48, 289, 76);
 		frame.getContentPane().add(timingLabel);
 
 		currentTimeLabel = new JLabel(dateformat.format(new Date()));
-		currentTimeLabel.setBounds(86, 20, 289, 15);
+		currentTimeLabel.setBounds(121, 10, 192, 15);
 		frame.getContentPane().add(currentTimeLabel);
 
 		JList list = new JList();
-		list.setBounds(30, 258, 371, 175);
-		list.setListData(new String[] { "香蕉", "雪梨", "苹果", "荔枝" });
+		list.setFont(new Font("宋体", Font.PLAIN, 18));
+		list.setBounds(97, 197, 239, 236);
 		frame.getContentPane().add(list);
 
 		Calendar cal = Calendar.getInstance();
@@ -112,11 +112,6 @@ public class Stopwatch {
 
 		// 秒表计时定时器
 		ActionListener runTime = new ActionListener() {
-			// MM为分钟 SS为秒 MS为100毫秒HH为小时
-			int MM = 0;
-			int SS = 0;
-			int MS = 0;
-			int HH = 0;
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -155,11 +150,27 @@ public class Stopwatch {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (isRunningState()) {
+					if (count < 9) {
+						timelist[count] = count + 1 + ". " + timingLabel.getText();
+						count++;
+						list.setListData(timelist);
+					}
 
 				} else {
 					startButton.setVisible(true);
 					countAndResetButton.setVisible(false);
 					pauseAndContiueButton.setVisible(false);
+					list.setListData(new String[] {});
+					timingLabel.setText("00:00:00:0");
+					timelist = new String[10];
+					count = 0;
+					pauseAndContiueButton.setText("暂停");
+					countAndResetButton.setText("计数");
+					// MM为分钟 SS为秒 MS为100毫秒HH为小时
+					MM = 0;
+					SS = 0;
+					MS = 0;
+					HH = 0;
 				}
 
 			}
@@ -171,9 +182,13 @@ public class Stopwatch {
 				if (isRunningState()) {
 					runTimer.stop();
 					setRunningState(!isRunningState());
+					pauseAndContiueButton.setText("继续");
+					countAndResetButton.setText("重置");
 				} else {
 					runTimer.start();
 					setRunningState(!isRunningState());
+					pauseAndContiueButton.setText("暂停");
+					countAndResetButton.setText("计数");
 				}
 			}
 		});

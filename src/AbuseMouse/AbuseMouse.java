@@ -1,4 +1,4 @@
-package AbuseMouse;
+package abuseMouse;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;

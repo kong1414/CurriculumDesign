@@ -1,12 +1,14 @@
-package abuseMouse;
+package shopping;
 
 import javax.swing.JFrame;
 
-public class AbuseMouseDemo {
+public class ShoppingDemo {
 	public static void main(String[] args) {
-		JFrame frame = new JFrame("Abuse Mouse");
+		JFrame frame = new JFrame("购物车");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().add(new AbuseMouse());
+
+		frame.getContentPane().add(new ShopSystem());
+
 		frame.pack();
 		frame.setVisible(true);
 	}
