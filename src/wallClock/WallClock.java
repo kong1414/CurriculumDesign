@@ -43,7 +43,7 @@ public class WallClock extends JPanel {
 		int h = ca.get(Calendar.HOUR); // 获取小时
 		int m = ca.get(Calendar.MINUTE); // 获取分钟
 		int s = ca.get(Calendar.SECOND); // 获取秒
-		System.out.println(h + " " + m + " " + s);
+		// System.out.println(h + " " + m + " " + s);
 		// 画板刷新，避免出现绘图重复
 		g.setColor(new Color(238, 238, 238));
 		g.fillRect(0, 0, 400, 100);
