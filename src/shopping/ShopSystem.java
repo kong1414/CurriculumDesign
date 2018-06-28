@@ -58,63 +58,70 @@ class ShopSystem extends JPanel {
         setPreferredSize(new Dimension(640, 400));
 
         JLabel nameLabel = new JLabel("品名");
-        nameLabel.setBounds(21, 10, 54, 15);
+        nameLabel.setBounds(15, 22, 54, 15);
         add(nameLabel);
 
         nameField = new JTextField(10);
-        nameField.setBounds(90, 7, 66, 21);
+        nameField.setBounds(84, 19, 66, 21);
         add(nameField);
         nameField.setColumns(10);
 
         JLabel numLabel = new JLabel("数量");
-        numLabel.setBounds(173, 10, 54, 15);
+        numLabel.setBounds(165, 22, 54, 15);
         add(numLabel);
 
         numField = new JTextField(10);
-        numField.setBounds(249, 7, 66, 21);
+        numField.setBounds(234, 19, 66, 21);
         add(numField);
         numField.setColumns(10);
 
         JLabel priceLabel = new JLabel("单价");
-        priceLabel.setBounds(332, 10, 54, 15);
+        priceLabel.setBounds(315, 22, 54, 15);
         add(priceLabel);
 
         priceField = new JTextField(10);
-        priceField.setBounds(396, 7, 66, 21);
+        priceField.setBounds(384, 19, 66, 21);
         add(priceField);
         priceField.setColumns(10);
 
         addButton = new JButton("添加");
-        addButton.setBounds(480, 10, 66, 23);
+        addButton.setBounds(465, 18, 66, 23);
         addButton.setBackground(Color.white);
         add(addButton);
 
         delButton = new JButton("删除");
-        delButton.setBounds(562, 10, 71, 23);
+        delButton.setBounds(546, 18, 71, 23);
+        delButton.setBackground(Color.white);
         add(delButton);
 
         emptybutton = new JButton("清空");
-        emptybutton.setBounds(38, 56, 93, 23);
+        emptybutton.setBounds(50, 60, 100, 30);
+        emptybutton.setBackground(Color.white);
         add(emptybutton);
 
         paybutton = new JButton("付款");
-        paybutton.setBounds(147, 56, 93, 23);
+        paybutton.setBounds(198, 60, 100, 30);
+        paybutton.setBackground(Color.white);
         add(paybutton);
 
         billbutton = new JButton("清单");
-        billbutton.setBounds(260, 56, 93, 23);
+        billbutton.setBounds(346, 60, 100, 30);
+        billbutton.setBackground(Color.white);
         add(billbutton);
 
         clsButton = new JButton("清屏");
-        clsButton.setBounds(381, 56, 93, 23);
+        clsButton.setBounds(494, 60, 100, 30);
+        clsButton.setBackground(Color.white);
         add(clsButton);
 
         topScreenButton = new JButton("首位");
-        topScreenButton.setBounds(525, 314, 93, 23);
+        topScreenButton.setBounds(514, 300, 90, 30);
+        topScreenButton.setBackground(Color.white);
         add(topScreenButton);
 
         bottomScreenButton = new JButton("末位");
-        bottomScreenButton.setBounds(525, 347, 93, 23);
+        bottomScreenButton.setBounds(514, 340, 90, 30);
+        bottomScreenButton.setBackground(Color.white);
         add(bottomScreenButton);
 
         recordTextArea = new JTextArea(15, 40);
@@ -126,8 +133,8 @@ class ShopSystem extends JPanel {
 
         screen = new JScrollPane(recordTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        screen.setSize(401, 270);
-        screen.setLocation(100, 100);
+        screen.setSize(442, 256);
+        screen.setLocation(50, 114);
         screen.setBackground(Color.white);
         add(screen);
 
