@@ -131,8 +131,7 @@ class ShopSystem extends JPanel {
         recordTextArea.setEditable(false);
         // add(recordTextArea);
 
-        screen = new JScrollPane(recordTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        screen = new JScrollPane(recordTextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         screen.setSize(442, 256);
         screen.setLocation(50, 114);
         screen.setBackground(Color.white);
