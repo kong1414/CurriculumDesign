@@ -1,5 +1,6 @@
 package Stopwatch;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,6 +16,11 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import java.awt.Font;
 
+/**
+ * @Description:
+ * @Author: QiuGuanLin
+ * @Date: 2018/6/26 10:27
+ */
 public class Stopwatch {
 
     private JFrame frame;
@@ -73,15 +79,18 @@ public class Stopwatch {
 
         startButton = new JButton("开始");
         startButton.setBounds(170, 142, 100, 30);
+        startButton.setBackground(Color.white);
         frame.getContentPane().add(startButton);
 
         countAndResetButton = new JButton("计数");
         countAndResetButton.setBounds(97, 142, 100, 30);
+        countAndResetButton.setBackground(Color.white);
         countAndResetButton.setVisible(false);
         frame.getContentPane().add(countAndResetButton);
 
         pauseAndContiueButton = new JButton("暂停");
         pauseAndContiueButton.setBounds(236, 142, 100, 30);
+        pauseAndContiueButton.setBackground(Color.white);
         pauseAndContiueButton.setVisible(false);
         frame.getContentPane().add(pauseAndContiueButton);
 

@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 /**
  * @Description:
  * @Author: QiuGuanLin
- * @Date: 2018/6/27 09:27
+ * @Date: 2018/6/26 09:27
  */
 class ShopSystem extends JPanel {
 

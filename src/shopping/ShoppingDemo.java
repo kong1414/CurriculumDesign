@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * @Description:
  * @Author: QiuGuanLin
- * @Date: 2018/6/27 09:14
+ * @Date: 2018/6/26 09:14
  */
 public class ShoppingDemo {
 	public static void main(String[] args) {

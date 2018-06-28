@@ -3,7 +3,7 @@ package shopping;
 /**
  * @Description:
  * @Author: QiuGuanLin
- * @Date: 2018/6/27 09:10
+ * @Date: 2018/6/26 09:10
  */
 public class Goods {
     private String name;
