@@ -24,10 +24,6 @@ public class WorldCup extends JPanel {
 	 */
 	public WorldCup() {
 		setLayout(null);
-		team[0] = new Team();
-		team[1] = new Team();
-		team[2] = new Team();
-		team[3] = new Team();
 
 		JLabel teamNameLabel = new JLabel("请先输入四个球队名");
 		teamNameLabel.setFont(new Font("宋体", Font.PLAIN, 16));
@@ -208,24 +204,23 @@ public class WorldCup extends JPanel {
 
 		JButton sortButton1 = new JButton("自定义排序");
 		sortButton1.setBounds(7, 424, 140, 30);
+		sortButton1.setVisible(false);
 		add(sortButton1);
 
 		JButton sortButton2 = new JButton("Arrays类排序");
 		sortButton2.setBounds(154, 424, 140, 30);
+		sortButton2.setVisible(false);
 		add(sortButton2);
 
 		JButton sortButton3 = new JButton("Collections类排序");
 		sortButton3.setBounds(301, 424, 140, 30);
+		sortButton3.setVisible(false);
 		add(sortButton3);
 
 		confirmButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				team[0].setname(teamNameField1.getText());
-				team[1].setname(teamNameField2.getText());
-				team[2].setname(teamNameField3.getText());
-				team[3].setname(teamNameField4.getText());
 				NameLabelA1.setText(teamNameField1.getText());
 				NameLabelA2.setText(teamNameField1.getText());
 				NameLabelA3.setText(teamNameField1.getText());
@@ -238,16 +233,15 @@ public class WorldCup extends JPanel {
 				NameLabelD1.setText(teamNameField4.getText());
 				NameLabelD2.setText(teamNameField4.getText());
 				NameLabelD3.setText(teamNameField4.getText());
+				sortButton1.setVisible(true);
+				sortButton2.setVisible(true);
+				sortButton3.setVisible(true);
 			}
 		});
 		resetButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) { // 全部清空重置
-				team[0] = new Team();
-				team[1] = new Team();
-				team[2] = new Team();
-				team[3] = new Team();
 				teamNameField1.setText("");
 				teamNameField2.setText("");
 				teamNameField3.setText("");
@@ -264,6 +258,9 @@ public class WorldCup extends JPanel {
 				NameLabelD1.setText("");
 				NameLabelD2.setText("");
 				NameLabelD3.setText("");
+				sortButton1.setVisible(false);
+				sortButton2.setVisible(false);
+				sortButton3.setVisible(false);
 			}
 		});
 
@@ -271,6 +268,10 @@ public class WorldCup extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				team[0] = new Team(teamNameField1.getText());
+				team[1] = new Team(teamNameField2.getText());
+				team[2] = new Team(teamNameField3.getText());
+				team[3] = new Team(teamNameField4.getText());
 				team[0].game(team[0], team[1], (int) spinnerA1.getValue(), (int) spinnerB1.getValue());
 				team[0].game(team[0], team[2], (int) spinnerA2.getValue(), (int) spinnerC1.getValue());
 				team[0].game(team[0], team[3], (int) spinnerA3.getValue(), (int) spinnerD1.getValue());
@@ -286,6 +287,10 @@ public class WorldCup extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				team[0] = new Team(teamNameField1.getText());
+				team[1] = new Team(teamNameField2.getText());
+				team[2] = new Team(teamNameField3.getText());
+				team[3] = new Team(teamNameField4.getText());
 				team[0].game(team[0], team[1], (int) spinnerA1.getValue(), (int) spinnerB1.getValue());
 				team[0].game(team[0], team[2], (int) spinnerA2.getValue(), (int) spinnerC1.getValue());
 				team[0].game(team[0], team[3], (int) spinnerA3.getValue(), (int) spinnerD1.getValue());
@@ -301,6 +306,10 @@ public class WorldCup extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				team[0] = new Team(teamNameField1.getText());
+				team[1] = new Team(teamNameField2.getText());
+				team[2] = new Team(teamNameField3.getText());
+				team[3] = new Team(teamNameField4.getText());
 				team[0].game(team[0], team[1], (int) spinnerA1.getValue(), (int) spinnerB1.getValue());
 				team[0].game(team[0], team[2], (int) spinnerA2.getValue(), (int) spinnerC1.getValue());
 				team[0].game(team[0], team[3], (int) spinnerA3.getValue(), (int) spinnerD1.getValue());
